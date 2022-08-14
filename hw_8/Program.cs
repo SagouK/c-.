@@ -41,5 +41,3 @@ static void CheckNumber(int number)
     }
 
 }
-
-
