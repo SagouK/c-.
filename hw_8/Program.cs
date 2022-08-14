@@ -10,10 +10,6 @@ static void InputNumber(ref int number)
     {
         Console.WriteLine("Введите пятизначное число: ");
         number = int.Parse(Console.ReadLine() ?? "");
-        if (number < 10000)
-        {
-            Console.WriteLine("Это не пятизночное число, пожалуйста, введите пятизначное!");
-        }
     }
     catch (Exception exc)
     {
@@ -28,14 +24,22 @@ static void CheckNumber(int number)
     int a2 = (number % 10000) / 1000;
     int a4 = (number % 100) / 10;
 
-    if (a1 == a5 && a2 == a4)
-    {   
-        Console.WriteLine($"Это палиндром: {number}");
+    if (number >= 10000)
+    {
+        if (a1 == a5 && a2 == a4)
+        {   
+            Console.WriteLine($"Это палиндром: {number}");
+        }
+        else
+        {
+            Console.WriteLine($"Это не палиндром: {number}");
+        }
     }
     else
     {
-        Console.WriteLine($"Это не палиндром: {number}");
+        Console.WriteLine("Это не пятизночное число, пожалуйста, введите пятизначное!");
     }
+
 }
 
 
