@@ -10,8 +10,9 @@ void GetArray(int rows, int columns)
     {
         for (int j = 0; j < columns; j++)
         {
-            arr[i,j] = new Random().Next(-10, 10);
-            Console.Write($"{arr[i, j]} ");
+            arr[i,j] = new Random().NextDouble() * 10;
+            Console.Write(String.Format("{0:0.#}", arr[i, j]));
+            Console.Write("\t");
         } 
     Console.WriteLine();
     }   
