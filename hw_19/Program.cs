@@ -1,7 +1,6 @@
 ﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 
 GetArray(3, 4);
-//Console.Write($"{array[rows, columns]}");
 
 void GetArray(int rows, int columns)
 {
