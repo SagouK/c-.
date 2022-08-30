@@ -2,30 +2,25 @@
 // и возвращает значение этого элемента или же указание, что такого элемента нет.
 
 
-
-
 Console.WriteLine("Введите количество строк: ");
 int rows = int.Parse(Console.ReadLine() ?? "");
 
 Console.WriteLine("Введите количество столбцов: ");
 int columns = int.Parse(Console.ReadLine() ?? "");
 
+
 int[,] array = GetArray(rows, columns, -10, 10);
 
-try
-{
+
 Console.WriteLine("Введите номер строки: ");
 int positionRow = int.Parse(Console.ReadLine() ?? "");
 
 Console.WriteLine("Введите номер столбца: ");
 int positionColumn = int.Parse(Console.ReadLine() ?? "");
-}
-catch(Exception exc)
-{
-    Console.Write($"Ошибка ввода данных! {exc.Message}");
-}
-int positionValue = ReturnValue(array, positionRow, positionColumn);
-Console.Write(positionValue);
+
+
+ReturnValue(array, positionRow, positionColumn);
+
 
 int[,] GetArray(int rows, int columns, int minValue, int maxValue)
 {
@@ -42,19 +37,24 @@ int[,] GetArray(int rows, int columns, int minValue, int maxValue)
     return arr;
 }
 
-int ReturnValue(int[,] finalArray, int rowPos, int columnPos, int size)
+void ReturnValue(int[,] finalArray, int rowPos, int columnPos)
 {
-    int[] box = new int[size];
-    for (int i = 0; i < finalArray.GetLength(0); i++)
+    bool elementExist = false;
+    int i = 0; int j = 0;
+    for (i = 0; i < finalArray.GetLength(0); i++)
     {
-        for (int j = 0; j < finalArray.GetLength(1); j++)
+        for (j = 0; j < finalArray.GetLength(1); j++)
         {
-            if (finalArray[rowPos, columnPos] == finalArray[i,j])
+            if (rowPos == i && columnPos == j)
             {
-                return finalArray[rowPos, columnPos];
-            }
+                elementExist = true;
+                Console.WriteLine($"Этот элемент существует: {finalArray[rowPos, columnPos]}");
+                break;
+            } 
         }
     }
-    Console.WriteLine("Такого числа в массиве нет :С"); 
-    return rowPos & columnPos;
+    if (elementExist == false)
+    {
+        Console.WriteLine($"Такого элемента не существует --> [{rowPos},{columnPos}]");
+    }
 }
