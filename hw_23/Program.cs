@@ -20,19 +20,19 @@ else Console.WriteLine("Неверное количество строк и ст
 
 static void GetRowsColumns(ref int m, ref int n)
 {
-try
-{
-    Console.WriteLine("Введите количество строк двумерного массива: ");
-    m = int.Parse(Console.ReadLine() ?? "");
+    try
+    {
+        Console.WriteLine("Введите количество строк двумерного массива: ");
+        m = int.Parse(Console.ReadLine() ?? "");
 
-    Console.WriteLine("Введите количество столбцов двумерного массива: ");
-    n = int.Parse(Console.ReadLine() ?? "");
-}
-catch(Exception exc)
-{
-    Console.WriteLine($"Ошибка ввода данных! {exc.Message}");
-    return;
-}
+        Console.WriteLine("Введите количество столбцов двумерного массива: ");
+        n = int.Parse(Console.ReadLine() ?? "");
+    }
+    catch(Exception exc)
+    {
+        Console.WriteLine($"Ошибка ввода данных! {exc.Message}");
+        return;
+    }
 }
 
 int[,] GetArray(int m, int n, int minValue, int maxValue)
