@@ -4,7 +4,7 @@
 Console.Clear();
 
 int[,,] array = GetArray(2, 2, 2, 10, 99);
-Console.WriteLine();
+
 
 int[,,] GetArray(int x, int y, int z, int minValue, int maxValue)
 {
@@ -18,7 +18,9 @@ int[,,] GetArray(int x, int y, int z, int minValue, int maxValue)
                 arr[i,j,k] = new Random().Next(minValue, maxValue + 1);
                 Console.Write($"{arr[i,j,k]} ({i},{j},{k}) ");
             }
+            Console.WriteLine();
         }
+        Console.WriteLine();
     }
     return arr;
 }
