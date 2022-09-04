@@ -11,8 +11,6 @@ Console.Write($"Сумма натуральных элементов от {m} д
 
 int GetNumbers(int start, int end)
 {   
-    int sum = 0;
-    sum += start;
     if(start == end) return start;
     else
     return start + GetNumbers(start+1, end);
