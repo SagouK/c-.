@@ -57,8 +57,6 @@ int[,] GetArray(int m, int n, int minValue, int maxValue)
 
 void GetProductAB(int[,] arrayA, int[,] arrayB, int[,] arrayC, int rowA, int columnB)
 {
-    //int[,] arrayC = new int[i,j];
-    
     for (int i = 0; i < arrayC.GetLength(0); i++)
     {
         for (int j = 0; j < arrayC.GetLength(1); j++)
